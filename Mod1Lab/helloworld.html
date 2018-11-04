@@ -15,10 +15,11 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script>
-    var helloWorldApp = angular.module('helloWorldApp', []);
+    var helloWorldApp = angular.module('helloWorldApp', [])
+    .constant('myConfig', {applicationName:'My Angular JS App'});
     helloWorldApp.controller('firstController', [
-        '$scope', function($scope){
-            $scope.appName = 'An App Name';
+        '$scope', 'myConfig', function($scope, myConfig){
+            $scope.appName = myConfig.applicationName;
         }
     ]);
 
