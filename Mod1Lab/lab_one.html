@@ -7,20 +7,22 @@
         crossorigin="anonymous">
 </head>
 
-<body >
-        <!-- ng-controller="bodyController" -->
+<body ng-controller="bodyController">
+        
     <div class="container">
         <h1>Module 1 Homework</h1>
-        <h2>The Current Date Time is:</h2>
+        <h2>The Current Date Time is: {{date}}</h2>
         
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script>
-    var labOne = angular.module('labOne', []);
-     labOne.controller('bodyController',[
-         '$scope',
-         function ($scope){
-             
+    var labOne = angular.module('labOne', [])
+    .constant('myDate', {d : new Date()});
+    
+    labOne.controller('bodyController',[
+         '$scope', 'myDate',
+         function ($scope, myDate){
+           $scope.date = myDate.d; 
          }
      ]);  
 
