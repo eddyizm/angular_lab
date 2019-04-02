@@ -2,9 +2,11 @@ app.controller("menuController", [
   '$scope',
   function($scope){
     $scope.model = { title: 'Our Menu'};
-    
-    $scope.changeMainDish = function (item){
+    $scope.model = { price: ''};
+
+    $scope.changeMainDish = function (item, price){
       $scope.model.mainDish = item;
+      $scope.model.price = price;
     }
     
     $scope.$watch('model.mainDish', function (newValue, oldValue){
@@ -13,8 +15,5 @@ app.controller("menuController", [
       }
     });
 
-    $scope.changeMainDish = function (item){
-      $scope.model.mainDish = item;
-    }
   }
 ]);
