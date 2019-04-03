@@ -31,7 +31,7 @@
         </div>
         <div>
             <h3>Selected Item</h3>
-            <pre>{{model.mainDish}}</pre>
+            <pre>{{model.mainDish.item}}</pre>
         </div>
         <div>
             <h3>Special Instuctions</h3>
@@ -39,7 +39,7 @@
         </div>
         <div>
             <h3>Order Summary</h3>
-            <pre>{{model.mainDish}} ${{model.price}}- {{model.specialInstructions}}</pre>
+            <pre>{{model.mainDish.item}} ${{model.mainDish.price}} - {{model.specialInstructions}}</pre>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
