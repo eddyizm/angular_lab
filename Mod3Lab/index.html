@@ -19,8 +19,8 @@
         <div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search">
             <span ng-click="addTopping(t)">{{t}}</span>
         </div>
-        <h3>Selected Toppings</h3>
-        <div ng-repeat="t in model.toppings">
+        <h3 ng-hide="model.toppings">Selected Toppings</h3>
+            <div ng-repeat="t in model.toppings">
             {{t}}
         </div>
     </div>
